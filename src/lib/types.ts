@@ -8,6 +8,13 @@ export interface Message {
   inputTokens?: number;
   outputTokens?: number;
   totalTokens?: number;
+  sources?: string[];
+}
+
+export interface Conversation {
+  id: string;
+  created_at: string;
+  title?: string;
 }
 
 export interface TokenLogEntry {

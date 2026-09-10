@@ -47,6 +47,42 @@ export default function ChatWindow({
     ta.style.height = Math.min(ta.scrollHeight, 120) + "px";
   };
 
+  // Fetch history when conversationId changes
+  useEffect(() => {
+    async function fetchHistory() {
+      setLoading(true);
+      try {
+        const res = await fetch(`${API_URL}/history/${conversationId}`);
+        if (res.ok) {
+          const data = await res.json();
+          const loadedMessages: Message[] = data.messages.map((m: any) => ({
+            id: m.id,
+            role: m.role,
+            content: m.content,
+            agent: m.agent_role,
+            inputTokens: m.input_tokens,
+            outputTokens: m.output_tokens,
+            totalTokens: m.total_tokens,
+            sources: m.sources,
+          }));
+          setMessages(loadedMessages);
+        } else {
+          setMessages([]);
+        }
+      } catch (err) {
+        console.error("Failed to load history", err);
+        setMessages([]);
+      } finally {
+        setLoading(false);
+      }
+    }
+    
+    // Check if we already have messages for this conversation to prevent refetching unnecessarily
+    // Or if we just generated a new ID, it will be empty anyway
+    fetchHistory();
+  }, [conversationId]);
+
+
   const sendMessage = useCallback(
     async (question: string) => {
       if (!question.trim() || loading) return;
@@ -87,6 +123,7 @@ export default function ChatWindow({
           inputTokens: data.input_tokens,
           outputTokens: data.output_tokens,
           totalTokens: data.total_tokens,
+          sources: data.sources,
         };
         setMessages((prev) => [...prev, agentMsg]);
 

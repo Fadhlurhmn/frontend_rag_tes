@@ -4,6 +4,7 @@
 
 import { useState, useCallback } from "react";
 import { v4 as uuidv4 } from "uuid";
+import Sidebar from "@/components/Sidebar";
 import ChatWindow from "@/components/ChatWindow";
 import TokenHistoryPanel from "@/components/TokenHistoryPanel";
 import { TokenLogEntry } from "@/lib/types";
@@ -21,8 +22,18 @@ export default function Home() {
     setTokenLog([]);
   }, []);
 
+  const handleSelectConversation = useCallback((id: string) => {
+    setConversationId(id);
+    setTokenLog([]);
+  }, []);
+
   return (
     <main className="app-shell">
+      <Sidebar
+        currentConversationId={conversationId}
+        onSelectConversation={handleSelectConversation}
+        onNewChat={handleNewChat}
+      />
       <ChatWindow
         conversationId={conversationId}
         onTokenLog={handleTokenLog}
