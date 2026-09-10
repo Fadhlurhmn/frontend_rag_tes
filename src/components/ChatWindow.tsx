@@ -138,7 +138,7 @@ export default function ChatWindow({
         <div className="header-avatar">🤖</div>
         <div className="header-info">
           <h1>HR Assistant</h1>
-          <p>BrandnPurpose · Kebijakan Internal</p>
+          <p>PT. XYZ · Kebijakan Internal</p>
         </div>
         <div className="header-badge">
           <span className="header-dot" />

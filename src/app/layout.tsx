@@ -8,12 +8,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "HR Assistant — BrandnPurpose",
+  title: "HR Assistant — PT. XYZ",
   description:
     "Tanyakan kebijakan cuti, reimbursement, dan WFH perusahaan secara langsung.",
   openGraph: {
-    title: "HR Assistant — BrandnPurpose",
-    description: "Asisten HR internal BrandnPurpose berbasis AI",
+    title: "HR Assistant — PT. XYZ",
+    description: "Asisten HR internal PT. XYZ berbasis AI",
   },
 };
 
