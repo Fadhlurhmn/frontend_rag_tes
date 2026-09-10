@@ -44,11 +44,11 @@ export const POLICY_DOCS: PolicyDoc[] = [
 ## 1. Kategori dan Batas Klaim
 | Kategori | Batas per Bulan | Catatan |
 |---|---|---|
-| Transportasi (non-WFH) | Rp 750.000 | Wajib lampirkan struk/bukti perjalanan |
-| Pulsa & Kuota Internet | Rp 200.000 | Otomatis untuk semua karyawan tetap |
-| Makan lembur (>2 jam lembur) | Rp 50.000/hari | Maks 10 hari per bulan |
-| Kesehatan (di luar asuransi kantor) | Rp 500.000/tahun | Butuh resep/kwitansi dokter |
-| Training & Sertifikasi | Rp 3.000.000/tahun | Wajib pre-approval dari manager sebelum ikut training |
+- Transportasi (non-WFH) | Rp 750.000 | Wajib lampirkan struk/bukti perjalanan |
+- Pulsa & Kuota Internet | Rp 200.000 | Otomatis untuk semua karyawan tetap |
+- Makan lembur (>2 jam lembur) | Rp 50.000/hari | Maks 10 hari per bulan |
+- Kesehatan (di luar asuransi kantor) | Rp 500.000/tahun | Butuh resep/kwitansi dokter |
+- Training & Sertifikasi | Rp 3.000.000/tahun | Wajib pre-approval dari manager sebelum ikut training |
 
 ## 2. Prosedur Klaim
 1. Submit klaim melalui sistem finance maksimal 30 hari kalender setelah tanggal transaksi. Klaim lewat dari itu otomatis ditolak sistem.
